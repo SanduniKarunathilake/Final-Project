@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4; /* Light cream background */
+    color: #4a3220; /* Dark brown text */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #8c6746; /* Coffee brown */
+    color: #f4ece3; /* Light cream text */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #f4ece3; /* Light cream text */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li.active a,
+.sidebar ul li a:hover {
+    background-color: #6f4e37; /* Darker coffee brown */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #6f4e37; /* Coffee brown heading */
+    text-align: center;
+}
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.tournament-card {
+    background-color: #f4ece3; /* Light cream background */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures content fits the card */
+    text-align: center;
+}
+
+.tournament-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #d8c4b2; /* Subtle divider */
+}
+
+.tournament-card .content {
+    padding: 15px;
+}
+
+.tournament-card h2 {
+    color: #4a3220; /* Dark brown text */
+    font-size: 1.5rem;
+}
+
+.tournament-card p {
+    color: #6f4e37; /* Coffee brown text */
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.tournament-card .register-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #8c6746; /* Coffee brown */
+    color: #f4ece3; /* Light cream text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tournament-card .register-link:hover {
+    background-color: #6f4e37; /* Darker coffee brown */
+}

@@ -1,0 +1,135 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f1eb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #e9d8c4;
+    padding: 20px;
+    border-right: 2px solid #d3bfa8;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+
+.sidebar h3 {
+    text-align: center;
+    color: #5d3a00;
+}
+
+.sidebar label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #5d3a00;
+}
+
+.sidebar input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #cbb199;
+    background: #fff8f3;
+    border-radius: 5px;
+}
+
+.sidebar a {
+    color: #5d3a00;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+    background: #fff8f3;
+}
+
+.nav-buttons {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.nav-buttons button {
+    background: #d8b4a0;
+    color: #3e2a1a;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    background: #cfa68c;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #4e3a27;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+table, th, td {
+    border: 1px solid #d3bfa8;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background: #e9d8c4;
+    color: #4e3a27;
+}
+
+td input {
+    width: 90%;
+    padding: 6px;
+    border: 1px solid #cbb199;
+    background: #fefaf6;
+    border-radius: 4px;
+}
+
+.form-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-buttons button {
+    background: #a67c52;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.form-buttons button:hover {
+    background: #8c6741;
+}

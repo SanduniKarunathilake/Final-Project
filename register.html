@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Selection - Legacy Sports Academy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      body {
+        background-color: #f5e9dc;
+        color: #3b141c;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .login-container {
+        width: 90%;
+        max-width: 1200px;
+        background-color: #f8f1e9;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(59, 20, 28, 0.2);
+        overflow: hidden;
+        margin: 2rem 0;
+      }
+
+      .logo-header {
+        background-color: #6f4e37;
+        padding: 2rem;
+        text-align: center;
+        color: #f8f1e9;
+      }
+
+      .logo-header img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      .logo-header h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .login-options {
+        padding: 3rem 2rem;
+      }
+
+      .login-options h2 {
+        text-align: center;
+        color: #3b141c;
+        margin-bottom: 2.5rem;
+        font-size: 1.8rem;
+        position: relative;
+      }
+
+      .login-options h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: #7e392f;
+        margin: 0.5rem auto;
+      }
+
+      .option-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .option-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        color: #3b141c;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border: 2px solid transparent;
+      }
+
+      .option-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .option-card .icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .option-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .option-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #593c39;
+      }
+
+      /* Card Colors */
+      .admin .icon {
+        background-color: #3b141c;
+      }
+      .admin:hover {
+        border-color: #3b141c;
+      }
+
+      .coach .icon {
+        background-color: #7e392f;
+      }
+      .coach:hover {
+        border-color: #7e392f;
+      }
+
+      .player .icon {
+        background-color: #a17249;
+      }
+      .player:hover {
+        border-color: #a17249;
+      }
+
+      .donor .icon {
+        background-color: #6f4e37;
+      }
+      .donor:hover {
+        border-color: #6f4e37;
+      }
+
+      .action-links {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .action-link {
+        color: #6f4e37;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        background-color: #f8f1e9;
+        border: 2px solid #d2ad84;
+      }
+
+      .action-link:hover {
+        color: #3b141c;
+        background-color: #d2ad84;
+      }
+
+      .action-link i {
+        font-size: 1.1rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .login-container {
+          width: 95%;
+        }
+
+        .option-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .logo-header h1 {
+          font-size: 1.5rem;
+        }
+
+        .action-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .action-link {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo-header">
+        <img src="image/2.png" alt="Legacy Sports Academy Logo" />
+        <h1>LEGACY SPORTS ACADEMY</h1>
+      </div>
+
+      <div class="login-options">
+        <h2>Select Your Login Type</h2>
+
+        <div class="option-grid">
+          <a href="Coach1.html?type=coach" class="option-card coach">
+            <div class="icon"><i class="fas fa-whistle"></i></div>
+            <h3>Coach</h3>
+            <p>Access training schedules and player progress</p>
+          </a>
+
+          <a href="Player1.html?type=player" class="option-card player">
+            <div class="icon"><i class="fas fa-running"></i></div>
+            <h3>Player</h3>
+            <p>View your training program and achievements</p>
+          </a>
+
+          <a href="Donor1.html?type=donor" class="option-card donor">
+            <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3>Donor/Sponsor</h3>
+            <p>Track your contributions and impact</p>
+          </a>
+        </div>
+
+        <div class="action-links">
+          <a href="home.php" class="action-link">
+            <i class="fas fa-arrow-left"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

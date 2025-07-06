@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Players Registration</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #d7c0ae, #f2e3d5);
+        margin: 0;
+        padding: 0;
+        color: #5e4b43;
+      }
+
+      .form-container {
+        background-color: #f9f0ea;
+        max-width: 650px;
+        margin: 50px auto;
+        padding: 35px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 18px rgba(94, 75, 67, 0.15);
+      }
+
+      h1 {
+        text-align: center;
+        color: #7c5c50;
+        margin-bottom: 25px;
+      }
+
+      label {
+        font-weight: bold;
+        color: #6d5247;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="number"],
+      input[type="email"],
+      input[type="tel"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border: 1px solid #c4b0a1;
+        border-radius: 6px;
+        background-color: #fef9f6;
+        font-size: 16px;
+        color: #4f3b35;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 60px;
+      }
+
+      input[type="radio"] {
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+
+      input[type="file"] {
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+
+      .form-buttons {
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      input[type="submit"],
+      input[type="reset"],
+      .back-button {
+        background-color: #b88a78;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        padding: 10px 25px;
+        margin: 5px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover,
+      .back-button:hover {
+        background-color: #a37665;
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Players Registration</h1>
+      <form
+        name="frmPlayer"
+        method="post"
+        action="player.php"
+        enctype="multipart/form-data"
+        onsubmit="return validateForm()"
+      >
+        <label for="txtNIC">Enter NIC Number:</label>
+        <input
+          type="text"
+          id="txtNIC"
+          name="txtNIC"
+          maxlength="12"
+          required
+          pattern="^[0-9]{9}[vVxX]$|^[0-9]{12}$"
+          title="NIC should be 9 digits followed by 'V' or 'X' or a 12-digit number."
+        />
+        <div id="nicError" class="error"></div>
+
+        <label for="txtName">Enter Player Name:</label>
+        <input
+          type="text"
+          id="txtName"
+          name="txtName"
+          size="40"
+          required
+          pattern="^[A-Za-z\s]+$"
+          title="Only letters and spaces are allowed."
+        />
+        <div id="nameError" class="error"></div>
+
+        <label for="txtAge">Age:</label>
+        <input
+          type="number"
+          id="txtAge"
+          name="txtAge"
+          min="1"
+          max="100"
+          required
+        />
+        <div id="ageError" class="error"></div>
+
+        <label for="txtpassword">Password:</label>
+        <input
+          type="password"
+          id="txtpassword"
+          name="txtpassword"
+          required
+          minlength="6"
+        />
+        <div id="passwordError" class="error"></div>
+
+        <label for="txtAdd">Address:</label>
+        <textarea id="txtAdd" name="txtAdd" required></textarea>
+        <div id="addressError" class="error"></div>
+
+        <label for="cmbSport">Sport:</label>
+        <select name="cmbSport" id="cmbSport" required>
+          <option value="">Select a Sport</option>
+          <option value="Chess">Chess</option>
+          <option value="Tennis">Tennis</option>
+          <option value="Swimming">Swimming</option>
+          <option value="Badminton">Badminton</option>
+        </select>
+        <div id="sportError" class="error"></div>
+
+        <label for="txtNum">Contact Number:</label>
+        <input
+          type="tel"
+          id="txtNum"
+          name="txtNum"
+          pattern="[0-9]{10}"
+          required
+          title="Please enter a 10-digit phone number"
+        />
+        <div id="contactError" class="error"></div>
+
+        <label for="txtEM">Email:</label>
+        <input type="email" id="txtEM" name="txtEM" required />
+        <div id="emailError" class="error"></div>
+
+        <label for="cmbPlayerType">Player Type:</label>
+        <select name="cmbPlayerType" id="cmbPlayerType" required>
+          <option value="">Select Player Type</option>
+          <option value="school">School Players</option>
+          <option value="after_school">After School Players</option>
+        </select>
+        <div id="typeError" class="error"></div>
+
+        <label>Are you a low incomer?:</label><br />
+        <input
+          type="radio"
+          name="radiolowIncome"
+          id="lowIncomeYes"
+          value="yes"
+          required
+        />
+        <label for="lowIncomeYes">Yes</label>
+        <input type="radio" name="radiolowIncome" id="lowIncomeNo" value="no" />
+        <label for="lowIncomeNo">No</label>
+        <div id="incomeError" class="error"></div>
+
+        <label for="imgfile"
+          >Grama Niladari's Letter (PDF only, max 5MB):</label
+        >
+        <input type="file" id="imgfile" name="imgfile" accept=".pdf" required />
+        <div id="fileError" class="error"></div>
+
+        <div class="form-buttons">
+          <input type="submit" name="btnSubmit" value="Submit" />
+          <input type="reset" value="Reset" /><br /><br />
+          <a href="index.html" class="back-button">Back to Login</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        let isValid = true;
+
+        // Clear previous errors
+        document
+          .querySelectorAll(".error")
+          .forEach((el) => (el.textContent = ""));
+
+        // Validate NIC
+        const nic = document.getElementById("txtNIC").value;
+        const nicPattern = /^[0-9]{9}[vVxX]$|^[0-9]{12}$/;
+        if (!nicPattern.test(nic)) {
+          document.getElementById("nicError").textContent =
+            "Invalid NIC format";
+          isValid = false;
+        }
+
+        // Validate Name
+        const name = document.getElementById("txtName").value;
+        const namePattern = /^[A-Za-z\s]+$/;
+        if (!namePattern.test(name)) {
+          document.getElementById("nameError").textContent =
+            "Name should contain only letters and spaces";
+          isValid = false;
+        }
+
+        // Validate Age
+        const age = document.getElementById("txtAge").value;
+        if (age < 1 || age > 100) {
+          document.getElementById("ageError").textContent =
+            "Age must be between 1 and 100";
+          isValid = false;
+        }
+
+        // Validate Password
+        const password = document.getElementById("txtpassword").value;
+        if (password.length < 6) {
+          document.getElementById("passwordError").textContent =
+            "Password must be at least 6 characters";
+          isValid = false;
+        }
+
+        // Validate Contact Number
+        const contact = document.getElementById("txtNum").value;
+        const contactPattern = /^[0-9]{10}$/;
+        if (!contactPattern.test(contact)) {
+          document.getElementById("contactError").textContent =
+            "Contact number must be 10 digits";
+          isValid = false;
+        }
+
+        // Validate File
+        const fileInput = document.getElementById("imgfile");
+        if (fileInput.files.length > 0) {
+          const file = fileInput.files[0];
+          if (file.size > 5 * 1024 * 1024) {
+            // 2MB
+            document.getElementById("fileError").textContent =
+              "File size must be less than 5MB";
+            isValid = false;
+          }
+          if (file.type !== "application/pdf") {
+            document.getElementById("fileError").textContent =
+              "Only PDF files are allowed";
+            isValid = false;
+          }
+        }
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

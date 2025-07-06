@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Donor/Sponsor Registration</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #c9a18d, #e6d1c3);
+        margin: 0;
+        padding: 0;
+        color: #4d3c32;
+      }
+
+      .form-container {
+        background-color: #fff8f3;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 35px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 18px rgba(77, 60, 50, 0.2);
+      }
+
+      h1 {
+        text-align: center;
+        color: #5d4037;
+        margin-bottom: 25px;
+      }
+
+      label {
+        font-weight: bold;
+        color: #5c4033;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="number"],
+      input[type="email"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        border: 1px solid #b29c8f;
+        border-radius: 6px;
+        background-color: #fef6f1;
+        font-size: 16px;
+        color: #3e2f28;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 60px;
+      }
+
+      .form-buttons {
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      input[type="submit"],
+      input[type="reset"],
+      .back-button {
+        background-color: #a9746e;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        padding: 10px 25px;
+        margin: 5px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      input[type="submit"]:hover,
+      input[type="reset"]:hover,
+      .back-button:hover {
+        background-color: #8d5d58;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Donor/Sponsor Registration</h1>
+      <form name="frmDonorSponsor" method="post" action="DonorD.php">
+        <label for="txtNIC">NIC Number:</label>
+        <input type="text" id="txtNIC" name="txtNIC" maxlength="12" required />
+
+        <label for="txtName">Name:</label>
+        <input type="text" id="txtName" name="txtName" required />
+
+        <label for="txtNum">Contact Number:</label>
+        <input type="number" id="txtNum" name="txtNum" min="1" required />
+
+        <label for="txtAge">Age:</label>
+        <input type="number" id="txtAge" name="txtAge" min="1" required />
+
+        <label for="txtpassword">Password:</label>
+        <input type="password" id="txtpassword" name="txtpassword" required />
+
+        <label for="txtAdd">Address:</label>
+        <textarea id="txtAdd" name="txtAdd" required></textarea>
+
+        <label for="txtEM">Email:</label>
+        <input type="email" id="txtEM" name="txtEM" required />
+
+        <label for="cmbType">Type:</label>
+        <select name="cmbType" id="cmbType" required>
+          <option value="">-- Select an option --</option>
+          <option value="sponsorships">For Sponsorships</option>
+          <option value="donate">Donate Money for Academy</option>
+          <option value="equipments">Provide Equipment</option>
+        </select>
+
+        <div class="form-buttons">
+          <input type="submit" name="btnSubmit" value="Submit" />
+          <input type="reset" value="Reset" name="btnReset" /><br /><br />
+
+          <a href="index.html" class="back-button">Back to Login</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

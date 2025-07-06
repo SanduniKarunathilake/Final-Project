@@ -1,0 +1,112 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4; /* Light cream background */
+    color: #4a3220; /* Dark brown text */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #8c6746; /* Coffee brown */
+    color: #f4ece3; /* Light cream text */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #f4ece3; /* Light cream text */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li.active a,
+.sidebar ul li a:hover {
+    background-color: #6f4e37; /* Darker coffee brown */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #6f4e37; /* Coffee brown heading */
+    text-align: center;
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f4ece3; /* Light cream background */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4a3220; /* Dark brown text */
+}
+
+input,
+textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #d8c4b2; /* Light brown border */
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #4a3220; /* Dark brown text */
+}
+
+textarea {
+    resize: none; /* Prevent resizing */
+}
+
+button.submit-button {
+    padding: 10px 15px;
+    background-color: #8c6746; /* Coffee brown */
+    color: #f4ece3; /* Light cream text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-button:hover {
+    background-color: #6f4e37; /* Darker coffee brown */
+}

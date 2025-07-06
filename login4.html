@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Legacy Sports Academy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      body {
+        background-color: #f5e9dc;
+        color: #3b141c;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("image/sports-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+      }
+
+      .login-container {
+        width: 90%;
+        max-width: 500px;
+        background-color: rgba(248, 241, 233, 0.95);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(59, 20, 28, 0.3);
+        overflow: hidden;
+        margin: 2rem;
+        border: 2px solid #6f4e37;
+      }
+
+      .logo-header {
+        background-color: #6f4e37;
+        padding: 1.5rem;
+        text-align: center;
+        color: #f8f1e9;
+        border-bottom: 3px solid #3b141c;
+      }
+
+      .logo-header img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+      }
+
+      .logo-header h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .login-form {
+        padding: 2.5rem;
+      }
+
+      .user-type {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding: 0.8rem;
+        background-color: #d2ad84;
+        border-radius: 10px;
+        font-weight: 600;
+        color: #3b141c;
+        border: 2px dashed #7e392f;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: #3b141c;
+      }
+
+      .input-field {
+        position: relative;
+      }
+
+      .input-field i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6f4e37;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px 12px 45px;
+        border: 2px solid #d2ad84;
+        border-radius: 10px;
+        font-size: 1rem;
+        background-color: #f8f1e9;
+        color: #3b141c;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: #7e392f;
+        box-shadow: 0 0 0 3px rgba(126, 57, 47, 0.2);
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .remember-me {
+        display: flex;
+        align-items: center;
+      }
+
+      .remember-me input {
+        margin-right: 8px;
+        accent-color: #7e392f;
+      }
+
+      .forgot-password a {
+        color: #6f4e37;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .forgot-password a:hover {
+        color: #3b141c;
+        text-decoration: underline;
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 14px;
+        background-color: #7e392f;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-btn:hover {
+        background-color: #3b141c;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .register-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+      }
+
+      .register-link a {
+        color: #6f4e37;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .register-link a:hover {
+        color: #3b141c;
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 576px) {
+        .login-container {
+          width: 95%;
+          padding: 1rem;
+        }
+
+        .login-form {
+          padding: 1.5rem;
+        }
+
+        .logo-header h1 {
+          font-size: 1.5rem;
+        }
+
+        .options {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo-header">
+        <img src="image/2.png" alt="Legacy Sports Academy Logo" />
+        <h1>LEGACY SPORTS ACADEMY</h1>
+      </div>
+
+      <div class="login-form">
+        <form action="login4.php" method="POST">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="login-btn">LOGIN</button>
+        </form>
+
+        <div class="register-link">
+          Don't have an account? <a href="register.html">Register here</a>
+        </div>
+        <div class="register-link">
+          Back to home <a href="Home.php">Home</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

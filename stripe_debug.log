@@ -1,0 +1,5 @@
+Request received: {"amount":1,"player_id":"P199734567911","donor_id":"D199834703923"}
+Session variables set: {"logged_in":true,"user_id":"D199834703923","name":"vishal fernado","role":"donor","donation_ref":"DON682de12506c64","donation_amount":1,"donation_player_id":"P199734567911","donation_donor_id":"D199834703923"}
+Player name fetched: Thejan Wickamanayaka
+Base URL: http://localhost:9000
+Checkout session created: cs_test_a13JwsS0J0Q21lirk9GAcpH39CIEZcU5WOLJQQHYXlBTF32mi4tF2p7zQy

@@ -1,0 +1,40 @@
+<?php
+session_start();
+
+
+$player_id = isset($_GET['PID']) ? $_GET['PID'] : (isset($_SESSION['PID']) ? $_SESSION['PID'] : '');
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a Player Payment</title>
+    <link rel="stylesheet" href="payment_style.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Make a Player Payment</h2>
+
+        
+    <form id="paymentForm" method="POST" action="submit_payment.php" onsubmit="return validatePaymentForm()">
+        <label for="player_id">Player ID</label>
+        <input type="text" id="player_id" name="player_id" value="" required>
+
+        <label for="amount">Amount</label>
+        <input type="number" step="0.01" id="amount" name="amount" required>
+
+        <label for="payment_date">Payment Date</label>
+        <input type="date" id="payment_date" name="payment_date" required>
+
+        <button type="submit">Submit Payment</button>
+    </form>
+
+        <button onclick="window.location.href='player_dashboard.html'">Back to Dashboard</button>
+        
+        <p id="paymentError"></p>
+    </div>
+
+    <script src="payment_validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f6efe8; /* Light cream background */
+    color: #4a3220; /* Dark brown text */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background-color: #8c6746; /* Coffee brown */
+    color: #f4ece3; /* Light cream text */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #f4ece3; /* Light cream text */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar ul li.active a,
+.sidebar ul li a:hover {
+    background-color: #6f4e37; /* Darker coffee brown */
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+header input[type="search"] {
+    padding: 10px;
+    border: 1px solid #d8c4b2; /* Soft brown border */
+    border-radius: 5px;
+    color: #4a3220; /* Dark brown text */
+}
+
+/* Dashboard Stats */
+.dashboard {
+    margin-bottom: 30px;
+}
+
+.dashboard h1 {
+    margin-bottom: 20px;
+    color: #6f4e37; /* Coffee brown heading */
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat {
+    background-color: #f4ece3; /* Light cream background */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stat h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #4a3220; /* Dark brown text */
+}
+
+.stat p {
+    margin-top: 10px;
+    color: #6f4e37; /* Coffee brown text */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #d8c4b2; /* Light brown border */
+    color: #4a3220; /* Dark brown text */
+}
+
+table th {
+    background-color: #f4ece3; /* Light cream background */
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f6efe8; /* Subtle hover effect */
+}

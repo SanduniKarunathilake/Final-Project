@@ -1,0 +1,217 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; 
+}
+
+ul {
+    list-style: none;
+    /*display: flex;
+    gap: 10px;
+    padding-left: 0; /* Removes default padding from ul */
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    width: 100%;
+    
+}
+
+.section-content{
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1300px;
+}
+
+/* nav bar */
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background: #D2AD84;
+}
+
+.header .navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between; /* Space between logo and nav links */
+    padding: 10px 18px;
+}
+
+.navbar .nav-logo .logo-text {
+    color: #3b141c; /* Updated to match LEGACY color */
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.navbar .nav-logo .logo-subtext {
+    color: #3b141c; /* Make Sports Academy same color as LEGACY */
+}
+
+.navbar .nav-menu {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Align links to the right */
+}
+
+.nav-link {
+    padding: 15px 18px; /* Equal padding for top/bottom and left/right */
+    background: #6F4E37;
+    color: #3b141c;
+    border-radius: 20px;
+    display: block;
+}
+.navbar .nav-menu .nav-link {
+    padding: 10px 18px;
+    color: #3b141c ;
+    font-size: 1.12rem;
+    background: #D2AD84 ;
+    border-radius: 30px;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+.navbar .nav-menu .nav-link:hover{
+    background: #3b141c;
+    
+    color: #D2AD84;
+}
+.navbar :where(#menu-close-button,#menu-open-button){
+    display: none
+}
+
+.hero-section{
+    background: #D2AD84;
+    min-height: 100vh;
+}
+.hero-section .section-content{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: aliceblue;
+    justify-content: space-between;
+}
+.hero-section .hero-details .title{
+    font-size: 2.3rem;
+    color:#7E392F;
+    font-family: "Montserrat", sans-serif; 
+}
+.hero-section .hero-details .subtitle{
+    font-size: 2rem;
+    margin-top: 8px;
+    font-weight: 600;
+    max-width: 70%;
+    color:#7E392F;
+
+
+}
+.hero-section .hero-details .description{
+    max-width: 100%;
+    font-size: 1.12rem;
+    margin: 24px 0 40px;
+    color:#593C39
+}
+.hero-section .hero-details .buttons{
+    display: flex;
+    gap: 23px;
+}
+.hero-section .hero-details .button{
+    padding: 10px 26px;
+    border: 2px solid transparent;
+    background: #A17249;
+    color:#3b141c; 
+    border-radius: 30px;
+    font-weight: #e04242;
+    transition: 0.3s ease;
+}
+.hero-section .hero-image-wrapper{
+    max-width: 500px;
+    margin-right: 30px;
+}
+.hero-section .hero-details .button:hover
+.hero-section .hero-details .contact-us{
+    color:#ccc;
+    border-color: #ccc;
+    background: transparent;
+}
+.hero-section .hero-details .contact-us:hover{
+    color:#6F4E37;
+    border-color:#c19A6B;
+    background: transparent;
+}
+/* about section*/
+.about-section{
+    padding:120px 0;
+    background:#D2AD84
+}
+.about-section .section-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.about-section.about-image-wrapper.about-image{
+    width:400px;
+    height:400px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 900px) {
+
+    .navbar :where(#menu-close-button, #menu-open-button){
+        font-size:var(1.3rem);
+        display:block;
+    }
+    .navbar #menu-close-button{
+        position: absolute;
+        right:30px;
+        top: 30px;
+    }
+    .navbar #menu-open-button{
+        color: #3b141c;
+    }
+    .navbar .nav-menu {
+        display: block;
+        position: fixed;
+        left: -300px;
+        top: 0;
+        width: 300px;
+        height: 100%;
+        background: #6F4E37;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+        display: flex;
+        transition: left 0.2s ease;
+    }
+    body.show-mobile-menu .navbar .nav-menu{
+        left: 0;
+    }
+    .navbar .nav-menu .nav-link{
+        color: rgb(232, 223, 223);
+        display: block;
+        margin-top: 17px;
+        font-size: 1.5rem;
+    }
+}
